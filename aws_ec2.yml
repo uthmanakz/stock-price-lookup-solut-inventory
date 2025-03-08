@@ -1,0 +1,13 @@
+plugin : amazon.aws.aws_ec2.yml
+regions: 
+ - eu-west-2a
+
+filters: 
+ "tag:dev":
+   - web
+   - app
+   - redis
+
+keyed_groups:
+ - keys['dev']
+ - prefix "dev"
